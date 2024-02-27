@@ -5,7 +5,7 @@ excerpt: nginx 无所不能 。
 comments: true
 ---
 
-### 1.nginx 基本配置
+## 1. nginx 基本配置
 ```nginx
 server {
     listen 80; # 端口
@@ -15,10 +15,32 @@ server {
 }
 ```
 
-### 2.nginx 静态资源配置
+## 2. nginx 开启 gzip 压缩
+```nginx
+# xxx.conf
+    gzip            on; # on 开启gzip压缩
+    gzip_min_length 1000;
+    gzip_proxied    expired no-cache no-store private auth;
+    gzip_types      brotli_types text/plain text/css application/javascript application/json image/svg+xml application/xml+rss;
+```
 
-### nginx 开启 pagespeed 效果
-##### 找到 pagespeed 镜像源 https://www.modpagespeed.com/doc/build_ngx_pagespeed_from_source
+### 2.1 gzip 与 brotli 同为压缩两者有什么区别 ?? 
+- brotli 仅支持 https、gzip 支持 http 和 https;
+- brotli 需要更多的计算能力, 代表着设备和软件设施的成本上涨;
+- brotli 压缩比定义在 4 - 5级时, 压缩效果会比gzip更好;
+
+### 2.2 为什么 brotli 不支持 https ?
+- 因为部分中间代理(CDN)等, 对非 gzip, deflate 内容编码时往往表现得很差, 用 HTTPS，他们可以在大多数情况下避免此问题
+- 对于服务器响应编码内容, 是由请求头 Accept-Encoding: 具体编码类型决定的(<strong>ex: gzip, deflate, br</strong>), 其中 http 并未携带 Accept-Endcoding: br 编码类型, 这也导致了 服务器不会对具体内容编码成br形式; (以谷歌浏览器作为参考)
+
+### 2.3 那 deflate 又是什么 ?
+- https://luyuhuang.tech/2020/04/28/gzip-and-deflate.html#%E5%BC%95%E8%A8%80
+
+## 3. nginx 开启 pagespeed 效果
+
+### 3.1 简介
+- pagespeed 是由 Google 开源用来自动优化网站的神器, 作为 nginx 第三方模块 ngx_pagespeed 将会重写你的网站. 对图片文件进行转换(png to webp等) 、组合 js 以及 css 等文件, 以达到最大限度减少http请求次数、压缩静态资源等优化方式;
+### 3.2 pagespeed 镜像源
 ```bash
     # 下载 pagespeed
     wget -O- https://github.com/apache/incubator-pagespeed-ngx/archive/v1.13.35.2-stable.tar.gz | tar -xz
@@ -32,7 +54,7 @@ server {
     # 编译 即可
     make && make upgrade 
 ```
-##### nginx.conf 配置
+### 3.3 nginx.conf 配置
 ```nginx
     pagespeed on;
     pagespeed FileCachePath /tmp/cache/ngx_pagespeed_cache;
@@ -87,14 +109,14 @@ server {
         }
     }
 ```
-##### ⚠️⚠️⚠️⚠️⚠️ _ 通过 yum 安装、centos内置的nginx 没有 ./configure 模块, 需要单独下载一个 nginx 包
+### 3.4 ⚠️⚠️⚠️⚠️⚠️ _ 通过 yum 安装、centos内置的nginx 没有 ./configure 模块, 需要单独下载一个 nginx 包 ⚠️⚠️⚠️⚠️⚠️
 - 配置路径: /usr/local/nginx/conf/conf.d
 - @TODO 需要调研下 如何更改 centos 内置的nginx
 - 参考资料: https://cloud.tencent.com/developer/article/1068607
   
 
-##### 遇到的问题: 
-- ### checking for psol ... not found ./configure: error: module ngx_pagespeed requires the pagespeed optimization library. Look in /root/oneinstack/src/nginx-1.20.0/objs/autoconf.err for more details.(升级 gcc 即可)
+### 3.5 遇到的问题: 
+- checking for psol ... not found ./configure: error: module ngx_pagespeed requires the pagespeed optimization library. Look in /root/oneinstack/src/nginx-1.20.0/objs/autoconf.err for more details.(升级 gcc 即可)
     ```bash 
     yum -y install libuuid-devel
     yum -y install centos-release-scl
@@ -103,4 +125,7 @@ server {
     gcc -v
     ```
 
-### demo3
+## 4. 网站性能测试工具
+- [PageSpeed Insights](https://pagespeed.web.dev/analysis/http-yo-vooverk-top/x8ca37e2op?form_factor=desktop) 由 Google 开发的一款免费评估网站的性能并提供改进建议. 工具通过分析网站的页面加载速度, 给予相应评分、并提供详细的性能优化建议. 
+
+## 5. xxx 持续更新中 ...

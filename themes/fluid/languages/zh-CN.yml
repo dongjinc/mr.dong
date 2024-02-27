@@ -28,6 +28,9 @@ about:
   title: '关于'
   subtitle: '关于'
 
+mail:
+  menu: "联系博主"
+
 links:
   menu: '友链'
   title: '友链'

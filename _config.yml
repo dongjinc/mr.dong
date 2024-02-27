@@ -105,3 +105,34 @@ deploy:
   type: git
   repo: https://github.com/dongjinc/mr.dong.github.io.git
   branch: site
+
+# Minify and compress
+minify:
+  enable: true
+  html:
+  css:
+    enable: true
+    exclude:
+      - '*.min.css'
+  js:
+    enable: true
+    exclude:
+      - '*.min.js'
+  svg:
+   gzip:
+    enable: true
+    include:
+      - '*.html'
+      - '*.css'
+      - '*.js'
+      - '*.txt'
+      - '*.ttf'
+      - '*.atom'
+      - '*.stl'
+      - '*.xml'
+      - '*.svg'
+      - '*.eot'
+      - '*.json'
+  brotli:
+  xml:
+  json:
