@@ -221,7 +221,7 @@ binary-extensions@^2.0.0:
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-bluebird@^3.2.2, bluebird@^3.5.0, bluebird@^3.5.1, bluebird@^3.5.2, bluebird@^3.5.5, bluebird@^3.7.2:
+bluebird@^3.2.2, bluebird@^3.5.1, bluebird@^3.5.2, bluebird@^3.5.5, bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -312,7 +312,7 @@ chalk@^2.4.2:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@^4.0.0, chalk@^4.0.2:
+chalk@^4.0.2:
   version "4.1.2"
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
   integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
@@ -890,17 +890,17 @@ hexo-cli@^4.3.0:
     resolve "^1.20.0"
     tildify "^2.0.0"
 
-hexo-deployer-git@^3.0.0:
-  version "3.0.0"
-  resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/hexo-deployer-git/-/hexo-deployer-git-3.0.0.tgz#da82f7a3445df2b213926dc8d030ba5499b68cf3"
-  integrity sha512-U2Xewjab+rvUDNTcuYYnOxitkDXL3f5VMUH32jKDHs3OC4YFVGRoEaTTDVHskqr3KRi78Wohjc6BSRHOoG3oxA==
+hexo-deployer-git@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/hexo-deployer-git/-/hexo-deployer-git-4.0.0.tgz#d507ecd5ba7d07f60b0c1ab50ced3e47535f6017"
+  integrity sha512-28t1Q+4taB/UaBAP52W3mD/wcCwa2y2zBieUfBJFBZudbmVgiKJB5YedYILeyI5QByaUKAOwoupmdTbocdQ+CQ==
   dependencies:
-    bluebird "^3.5.0"
-    chalk "^4.0.0"
-    hexo-fs "^3.0.1"
-    hexo-util "^2.1.0"
-    moment "^2.18.0"
-    nunjucks "^3.2.1"
+    bluebird "^3.7.2"
+    hexo-fs "^4.0.0"
+    hexo-util "^2.7.0"
+    luxon "^3.0.4"
+    nunjucks "^3.2.3"
+    picocolors "^1.0.0"
 
 hexo-front-matter@^3.0.0:
   version "3.0.0"
@@ -909,7 +909,7 @@ hexo-front-matter@^3.0.0:
   dependencies:
     js-yaml "^4.1.0"
 
-hexo-fs@^3.0.1, hexo-fs@^3.1.0:
+hexo-fs@^3.1.0:
   version "3.1.0"
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/hexo-fs/-/hexo-fs-3.1.0.tgz#2052ff72c68cda2c577a87aa0ea7980ae503fa99"
   integrity sha512-SfoDH7zlU9Iop+bAfEONXezbNIkpVX1QqjNCBYpapilZR+xVOCfTEdlNixanrKBbLGPb2fXqrdDBFgrKuiVGQQ==
@@ -919,7 +919,7 @@ hexo-fs@^3.0.1, hexo-fs@^3.1.0:
     graceful-fs "^4.1.11"
     hexo-util "^2.0.0"
 
-hexo-fs@^4.1.1:
+hexo-fs@^4.0.0, hexo-fs@^4.1.1:
   version "4.1.1"
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/hexo-fs/-/hexo-fs-4.1.1.tgz#4a95d0d6b15eb7baf642ce54b8234fb32e5f032d"
   integrity sha512-aDysNTyv8ElcerbFVbPLRXnYt+QDY6gAOZZ5DLbCxudY0Ywppqd+uZ03gZ2BDypIBvmNB27WYWYz76M+Yv/YXw==
@@ -1028,7 +1028,7 @@ hexo-theme-landscape@^0.0.3:
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/hexo-theme-landscape/-/hexo-theme-landscape-0.0.3.tgz#87d1f4d613da9be5245dad0d4b80479eab70d386"
   integrity sha512-b0Di+TUVs4ESrNX4ULEh9uQmADpO6kr10rIJ2OGZM8suNQNFKdxn+vJUjnLfKkCPJAfVmS7/S83KCNYe4tpoNw==
 
-hexo-util@^2.0.0, hexo-util@^2.1.0, hexo-util@^2.5.0, hexo-util@^2.7.0:
+hexo-util@^2.0.0, hexo-util@^2.5.0, hexo-util@^2.7.0:
   version "2.7.0"
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/hexo-util/-/hexo-util-2.7.0.tgz#13d09292e79d260db35399710b3e19f3995443a3"
   integrity sha512-hQM3h34nhDg0bSe/Tg1lnpODvNkz7h2u0+lZGzlKL0Oufp+5KCAEUX9wal7/xC7ax3/cwEn8IuoU75kNpZLpJQ==
@@ -1365,6 +1365,11 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+luxon@^3.0.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.4.4.tgz#cf20dc27dc532ba41a169c43fdcc0063601577af"
+  integrity sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA==
+
 map-obj@^1.0.0:
   version "1.0.1"
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
@@ -1502,7 +1507,7 @@ moment-timezone@^0.5.34:
   dependencies:
     moment "^2.29.4"
 
-moment@^2.18.0, moment@^2.29.1, moment@^2.29.4:
+moment@^2.29.1, moment@^2.29.4:
   version "2.30.1"
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/moment/-/moment-2.30.1.tgz#f8c91c07b7a786e30c59926df530b4eac96974ae"
   integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
@@ -1590,7 +1595,7 @@ nth-check@^2.0.1:
   dependencies:
     boolbase "^1.0.0"
 
-nunjucks@^3.2.1, nunjucks@^3.2.3:
+nunjucks@^3.2.3:
   version "3.2.4"
   resolved "https://devops.rsyjk.com:9083/repository/nh-npm-group/nunjucks/-/nunjucks-3.2.4.tgz#f0878eef528ce7b0aa35d67cc6898635fd74649e"
   integrity sha512-26XRV6BhkgK0VOxfbU5cQI+ICFUtMLixv1noZn1tGU38kQH5A5nmmbk/O45xdyBhD1esk47nKrY0mvQpZIhRjQ==
